@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovation Premier League — Register Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152238;
+    --navy-deep:#0D1626;
+    --cream:#F5EFE0;
+    --gold:#E3A73A;
+    --brick:#C1451E;
+    --slate:#5B7B8C;
+    --ink:#22303F;
+    --muted:#6B7280;
+    --line:#E3DCC8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Archivo', sans-serif; color:var(--ink); background:#FFFFFF; line-height:1.6;}
+  a{color:inherit;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  /* Nav */
+  header{position:sticky; top:0; z-index:20; background:var(--navy); border-bottom:1px solid rgba(245,239,224,0.12);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .brand{font-family:'Fraunces', serif; font-weight:700; font-size:19px; color:var(--cream);}
+  .navlinks{display:flex; font-size:14px;}
+  .navlinks a{color:#C9CCD6; text-decoration:none; margin-left:26px;}
+  .navlinks a:first-child{margin-left:0;}
+  .navlinks a:hover{color:var(--gold);}
+  .nav-cta{background:var(--gold); color:var(--navy-deep); padding:9px 18px; border-radius:2px; font-weight:600; text-decoration:none; font-size:13.5px;}
+
+  /* Hero */
+  .hero{background:var(--navy); color:var(--cream); position:relative; overflow:hidden; padding:90px 0 100px;}
+  .hero::after{content:""; position:absolute; right:-160px; top:-160px; width:480px; height:480px; border-radius:50%; background:var(--navy-deep);}
+  .hero .wrap{position:relative; z-index:1;}
+  .kicker{color:var(--gold); font-weight:600; font-size:14px; letter-spacing:0.02em; margin-bottom:20px;}
+  h1{font-family:'Fraunces', serif; font-weight:900; font-size:54px; line-height:1.05; max-width:640px;}
+  .hero p.lede{margin-top:22px; font-size:18px; color:#C9CCD6; max-width:520px;}
+  .hero .cta-row{margin-top:36px; display:flex; align-items:center; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:15px 30px; font-weight:600; font-size:15.5px; text-decoration:none; border-radius:2px;}
+  .btn-primary{background:var(--gold); color:var(--navy-deep);}
+  .btn-note{margin-left:18px; font-size:13px; color:#9AA2AF;}
+
+  /* Facts strip */
+  .facts{background:var(--navy-deep); border-top:1px solid rgba(245,239,224,0.1);}
+  .facts .wrap{display:flex; padding:26px 0;}
+  .fact{flex:1; padding:0 20px; border-right:1px solid rgba(245,239,224,0.12);}
+  .fact:last-child{border-right:none;}
+  .fact .num{font-family:'Fraunces', serif; font-weight:700; font-size:24px; color:var(--gold);}
+  .fact .lbl{font-size:13px; color:#AEB4C0; margin-top:4px;}
+
+  section{padding:84px 0;}
+  .eyebrow-title{font-family:'Fraunces', serif; font-weight:700; font-size:32px; color:var(--navy); margin-bottom:14px;}
+  .section-lede{color:var(--muted); font-size:16px; max-width:600px; margin-bottom:44px;}
+
+  /* Rounds */
+  .rounds{background:var(--cream);}
+  .round-grid{display:flex; flex-wrap:wrap; margin:0 -10px;}
+  .round-card{flex:1; min-width:220px; margin:10px; background:#FFFFFF; border:1px solid var(--line); border-radius:6px; padding:24px;}
+  .round-card h4{font-size:16px; color:var(--navy); margin-bottom:8px;}
+  .round-card p{font-size:13.5px; color:var(--muted);}
+
+  /* Why join */
+  .why-grid{display:flex; flex-wrap:wrap; margin:0 -10px;}
+  .why-card{flex:1; min-width:200px; margin:10px; padding:0;}
+  .why-card .num{font-family:'Fraunces', serif; font-size:30px; font-weight:700; color:var(--brick);}
+  .why-card p{font-size:13.5px; color:var(--muted); margin-top:6px;}
+
+  /* Timeline */
+  .timeline{background:var(--navy); color:var(--cream);}
+  .timeline .eyebrow-title{color:var(--cream);}
+  .timeline .section-lede{color:#AEB4C0;}
+  .tl-row{display:flex; flex-wrap:wrap; border-top:1px solid rgba(245,239,224,0.15);}
+  .tl-item{flex:1; min-width:200px; padding:22px 20px; border-right:1px solid rgba(245,239,224,0.12); border-bottom:1px solid rgba(245,239,224,0.15);}
+  .tl-item:last-child{border-right:none;}
+  .tl-item .date{color:var(--gold); font-weight:600; font-size:13.5px; margin-bottom:6px;}
+  .tl-item p{font-size:13.5px; color:#C9CCD6;}
+
+  /* Register form section */
+  .register{background:#FFFFFF;}
+  .reg-panel{display:flex; flex-wrap:wrap; gap:40px;}
+  .reg-info{flex:1; min-width:260px;}
+  .reg-info ul{margin-top:10px;}
+  .reg-info li{font-size:14px; color:var(--muted); padding:8px 0 8px 18px; position:relative;}
+  .reg-info li::before{content:"•"; position:absolute; left:0; color:var(--brick);}
+  .reg-card{flex:1; min-width:280px; max-width:420px; background:var(--cream); border-radius:8px; padding:32px; border:1px solid var(--line);}
+  .reg-card h3{font-family:'Fraunces', serif; font-size:22px; color:var(--navy); margin-bottom:6px;}
+  .reg-card p.small{font-size:13px; color:var(--muted); margin-bottom:22px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:12.5px; font-weight:600; color:var(--navy); margin-bottom:6px;}
+  .field input, .field select{
+    width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:4px;
+    font-family:'Archivo', sans-serif; font-size:14px; background:#FFFFFF; color:var(--ink);
+  }
+  .field input:focus, .field select:focus{outline:2px solid var(--gold); outline-offset:1px; border-color:var(--gold);}
+  .reg-submit{
+    width:100%; padding:14px; background:var(--navy); color:var(--cream); border:none; border-radius:4px;
+    font-weight:600; font-size:15px; cursor:pointer; margin-top:6px;
+  }
+  .reg-submit:hover{background:var(--navy-deep);}
+  .form-note{font-size:11.5px; color:var(--muted); margin-top:12px; text-align:center;}
+
+  footer{background:var(--navy-deep); color:#AEB4C0; padding:36px 0; font-size:13.5px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  footer a{color:var(--gold); text-decoration:none;}
+
+  @media (max-width:760px){
+    h1{font-size:34px;}
+    .facts .wrap{flex-direction:column;}
+    .fact{border-right:none; border-bottom:1px solid rgba(245,239,224,0.12); padding-bottom:14px; margin-bottom:14px;}
+    .tl-item{border-right:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Innovation Premier League</div>
+    <div class="navlinks">
+      <a href="#rounds">Rounds</a>
+      <a href="#why">Why join</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#register" class="nav-cta">Register</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Registrations now open</div>
+    <h1>Build. Pitch. Compete. Join the league.</h1>
+    <p class="lede">A campus-wide innovation championship across four rounds — form your squad and take on coding sprints, product pitches, and design challenges for the title of Campus Innovation Champions.</p>
+    <div class="cta-row">
+      <a href="#register" class="btn btn-primary">Register your team</a>
+      <span class="btn-note">Takes about 2 minutes · deadline April 12</span>
+    </div>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><div class="num">4 rounds</div><div class="lbl">Qualifiers to Grand Finale</div></div>
+    <div class="fact"><div class="num">3–5 members</div><div class="lbl">Per squad, any branch or year</div></div>
+    <div class="fact"><div class="num">Apr 12</div><div class="lbl">Last date to register</div></div>
+  </div>
+</div>
+
+<section class="rounds" id="rounds">
+  <div class="wrap">
+    <h2 class="eyebrow-title">The rounds</h2>
+    <p class="section-lede">Every squad moves through the same four stages — score climbs the leaderboard as you go.</p>
+    <div class="round-grid">
+      <div class="round-card"><h4>Ideathon</h4><p>Pitch your problem and early concept to a panel of mentors.</p></div>
+      <div class="round-card"><h4>Build Sprint</h4><p>A 24-hour build window to turn the concept into a working prototype.</p></div>
+      <div class="round-card"><h4>Pitch Battle</h4><p>Present your product to judges and a live audience.</p></div>
+      <div class="round-card"><h4>Design Sprint</h4><p>Refine the user experience before the grand finale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <h2 class="eyebrow-title">Why join</h2>
+    <p class="section-lede">Beyond the trophy — what teams walk away with.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="num">Trophy</div><p>Winning squad takes home the IPL Trophy and cash prizes</p></div>
+      <div class="why-card"><div class="num">Mentors</div><p>Direct feedback from industry mentors across every round</p></div>
+      <div class="why-card"><div class="num">Fast-track</div><p>Interview fast-track with our startup partners for finalists</p></div>
+      <div class="why-card"><div class="num">Network</div><p>Meet builders from every department on campus</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="timeline">
+  <div class="wrap">
+    <h2 class="eyebrow-title">Timeline</h2>
+    <p class="section-lede">Mark these dates once your squad is in.</p>
+  </div>
+  <div class="tl-row">
+    <div class="tl-item"><div class="date">Now – Apr 12</div><p>Team registration open</p></div>
+    <div class="tl-item"><div class="date">Apr 18</div><p>Ideathon &amp; Build Sprint kickoff</p></div>
+    <div class="tl-item"><div class="date">Apr 19</div><p>Pitch Battle &amp; Design Sprint</p></div>
+    <div class="tl-item"><div class="date">Apr 19, evening</div><p>Grand Finale &amp; awards</p></div>
+  </div>
+</section>
+
+<section class="register" id="register">
+  <div class="wrap">
+    <div class="reg-panel">
+      <div class="reg-info">
+        <h2 class="eyebrow-title">Register your team</h2>
+        <p class="section-lede" style="margin-bottom:18px;">A few details and you're in. One member can register on behalf of the whole squad.</p>
+        <ul>
+          <li>Open to all currently enrolled students, any department or year</li>
+          <li>Squads of 3–5 members</li>
+          <li>No entry fee</li>
+          <li>Walk-in registration also open at the Student Union desk</li>
+        </ul>
+      </div>
+      <div class="reg-card">
+        <h3>Team sign-up</h3>
+        <p class="small">Registration closes April 12.</p>
+        <form onsubmit="event.preventDefault(); this.querySelector('.reg-submit').textContent='Registered ✓'; this.querySelector('.reg-submit').disabled=true;">
+          <div class="field">
+            <label for="team-name">Team name</label>
+            <input type="text" id="team-name" name="team-name" placeholder="e.g. Madhu Nandhika" required>
+          </div>
+          <div class="field">
+            <label for="lead-email">Team lead email</label>
+            <input type="email" id="lead-email" name="lead-email" placeholder="you@college.edu" required>
+          </div>
+          <div class="field">
+            <label for="dept">Department</label>
+            <select id="dept" name="dept" required>
+              <option value="" disabled selected>Select department</option>
+              <option>Computer Science</option>
+              <option>Electronics</option>
+              <option>Mechanical</option>
+              <option>Civil</option>
+              <option>Business</option>
+              <option>Design</option>
+              <option>Biotech</option>
+              <option>Mathematics</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="team-size">Team size</label>
+            <select id="team-size" name="team-size" required>
+              <option value="" disabled selected>Select team size</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <button type="submit" class="reg-submit">Register team</button>
+          <p class="form-note">This is a static demo form — connect it to your registration backend or a form service (e.g. Google Forms, Formspree) before going live.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Organized by the Innovation &amp; Entrepreneurship Cell</div>
+    <div>Contact: 93426XXXXX · <a href="mailto:ipltech@gmail.com">ipltech@gmail.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
